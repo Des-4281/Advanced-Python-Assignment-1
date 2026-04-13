@@ -49,5 +49,23 @@ for student in students:
     print(f"Average Grade: {student.average_grade():.2f}")
     print("-" * 30)
 
-    
+# Student Dictionary
+student_dict = {
+    student1.name: student1,
+    student2.name: student2,
+    student3.name: student3
+}
+
+# Get student by email function 
+
+def get_student_by_email(email):
+    return student_dict.get(email)
+
+found_student = get_student_by_email("alice@hotmail.com")
+if found_student:
+    print(f"Student found: {found_student.name}")
+else:   
+    print("Student not found.")
+
+
 
