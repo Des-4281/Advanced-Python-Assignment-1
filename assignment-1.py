@@ -54,7 +54,8 @@ for student in students:
 student_dict = {
     student1.name: student1,
     student2.name: student2,
-    student3.name: student3
+    student3.name: student3,
+    student4.name: student4
 }
 
 # Get student by email function 
