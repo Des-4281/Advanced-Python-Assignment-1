@@ -29,7 +29,6 @@ class Student:
 student1 = Student("Alice McNeely",  "alice@hotmail.com", [85, 90, 78])
 student2 = Student("Bob James", "bob@yahoo.com", [92, 88, 95])
 student3 = Student("Charlie Brown", "charlie@gmail.com", [56, 72, 91])
-student4 = Student("John Barker", "john.gmail", [65, 83, 95]) # Invalid email for testing
 
 # Add additional grades to each student
 student1.add_grade(82)
@@ -52,10 +51,9 @@ for student in students:
 
 # Student Dictionary
 student_dict = {
-    student1.name: student1,
-    student2.name: student2,
-    student3.name: student3,
-    student4.name: student4
+    student1.email: student1,
+    student2.email: student2,
+    student3.email: student3
 }
 
 # Get student by email function 
@@ -73,7 +71,8 @@ else:
 unique_grades = set()
 for student in students:
     unique_grades.update(student.grade)
-    print("Unique grades:", unique_grades)
+
+print("Unique grades:", unique_grades)
 
 # Convert grades to tuples and demonstrate immutability
 grades_as_tuples = student1.grades_tuple()
@@ -93,6 +92,7 @@ for student in students:
 for student in students:
     print(f"{student.name}'s first grade: {student.grade[0]}")
     print(f"{student.name}'s last grade: {student.grade[-1]}")
+    print(f"{student.name} has {len(student.grade)} grades.") 
     print ("-" * 30)
 
 # Import the re module 
@@ -117,7 +117,6 @@ for student in students:
             count_above_90 += 1
 
 print(f"Number of grades above 90:", count_above_90)
-
 
 
 
