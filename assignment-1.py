@@ -29,6 +29,7 @@ class Student:
 student1 = Student("Alice McNeely",  "alice@hotmail.com", [85, 90, 78])
 student2 = Student("Bob James", "bob@yahoo.com", [92, 88, 95])
 student3 = Student("Charlie Brown", "charlie@gmail.com", [56, 72, 91])
+student4 = Student("John Barker", "john.gmail", [65, 83, 95]) # Invalid email for testing
 
 # Add additional grades to each student
 student1.add_grade(82)
@@ -108,7 +109,13 @@ for student in students:
     else:
         print (f"{student.name}'s email is invalid.")
 
+count_above_90 = 0
+for student in students:
+    for grade in student.grade:
+        if grade > 90:
+            count_above_90 += 1
 
+print(f"Number of grades above 90:", count_above_90)
 
 
 
