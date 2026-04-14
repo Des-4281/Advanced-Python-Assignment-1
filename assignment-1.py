@@ -67,5 +67,51 @@ if found_student:
 else:   
     print("Student not found.")
 
+# Create a set of unique grades from all students
+unique_grades = set()
+for student in students:
+    unique_grades.update(student.grade)
+    print("Unique grades:", unique_grades)
+
+# Convert grades to tuples and demonstrate immutability
+grades_as_tuples = student1.grades_tuple()
+print("Grades as tuple:", grades_as_tuples)
+
+try: 
+    grades_as_tuples[0] = 100
+except TypeError as e:
+    print("Tuples are immutable, so you cannot change their values.")
+
+# Remove the last grade from each student 
+for student in students:
+    removed_grade = student.grade.pop()
+    print(f"Removed grade {removed_grade} from {student.name}'s record.")
+
+# Print the first and last grade for each student after removal
+for student in students:
+    print(f"{student.name}'s first grade: {student.grade[0]}")
+    print(f"{student.name}'s last grade: {student.grade[-1]}")
+    print ("-" * 30)
+
+# Import the re module 
+import re
+
+# Function to validate email addresses using a regular expression pattern
+def validate_email(email):
+    regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    return re.match(regex, email) is not None
+
+# Loop through the students and validate their email addresses, printing the results
+for student in students:
+    if validate_email(student.email):
+        print (f"{student.name}'s email is valid.")
+    else:
+        print (f"{student.name}'s email is invalid.")
+
+
+
+
+
+
 
 
