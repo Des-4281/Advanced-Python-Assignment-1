@@ -7,7 +7,7 @@ class Student:
 
     def add_grade(self, grades):
         # Add grades to the student's record
-        self.grades.extend(grades)
+        self.grades.append(grades)
 
     def average_grade(self):
         # Return the average of all grades
